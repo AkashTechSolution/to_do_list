@@ -2,10 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 import json
+import logging
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.db import connection
+
+logger = logging.getLogger(__name__)
 
 # ------------------------
 # API ENDPOINTS
@@ -80,5 +83,4 @@ def add_task_view(request):
         return redirect("task_list")
 
     return render(request, "tasks/add_task.html")
-
 
