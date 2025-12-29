@@ -16,9 +16,17 @@ logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def create_task(request):
-    if request.method == "POST":
+    if request.method != "POST":
+        return JsonResponse({"error": "Invalid request"}, status=400)
+
+    try:
         data = json.loads(request.body)
 
+        # Validation
+        if not data.get("title"):
+            return JsonResponse({"error": "Title is required"}, status=400)
+
+        # Database operation
         with connection.cursor() as cursor:
             cursor.execute(
                 """
@@ -33,10 +41,15 @@ def create_task(request):
                 ]
             )
 
+        # Success log
+        logger.info("Task created successfully")
+
         return JsonResponse({"message": "Task created"}, status=201)
 
-    return JsonResponse({"error": "Invalid request"}, status=400)
-
+    except Exception as e:
+        # Error log
+        logger.error(f"Database error: {e}")
+        return JsonResponse({"error": "Internal server error"}, status=500)
 
 def get_tasks(request):
     with connection.cursor() as cursor:
