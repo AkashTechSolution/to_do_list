@@ -58,6 +58,7 @@ python manage.py runserver
 - Endpoint: /api/tasks/
 - Method: GET
 - Response:
+
 [
   {
     "id": 1,
@@ -66,6 +67,7 @@ python manage.py runserver
     "due_date": "2025-12-28",
     "status": "Pending"
   },
+
   {
     "id": 2,
     "title": "Dairy Products",
@@ -81,7 +83,8 @@ This project uses pytest for automated testing of API endpoints.
 
 pytest
 
-Output:
+- Output:
+
 ========= test session starts =========
 platform win32 -- Python 3.13.7, pytest-9.0.2, pluggy-1.6.0
 django: version: 6.0, settings: to_do_list.settings (from ini)
