@@ -18,10 +18,6 @@ Database - **SQLite** (default Django database)
 Testing framework - **pytest** (for automate API testing process)  
 Frontend - **HTML** (Django Templates)
 
-# Command to create virtual environment (for Windows system)
-python -m venv venv
-venv\Scripts\activate
-
 # Command to run the Application 
 python manage.py runserver
 
