@@ -18,27 +18,28 @@ Database - **SQLite** (default Django database)
 Testing framework - **pytest** (for automate API testing process)  
 Frontend - **HTML** (Django Templates)
 
-# Command to create virtual environment (for Windows system) -
+# Command to create virtual environment (for Windows system)
 python -m venv venv
 venv\Scripts\activate
 
-# Command to run the Application -
+# Command to run the Application 
 python manage.py runserver
 
 - Then we will open "http://127.0.0.1:8000/" in a web browser
 
 # HTML Templates -
-http://127.0.0.1:8000/      - It will show the web page with the feature to add task 
-http://127.0.0.1:8000/add/     - It will show the page for entering the details of the task
-http://127.0.0.1:8000/api/tasks/      - It will display the list of all tasks created
+- http://127.0.0.1:8000/      - It will show the web page with the feature to add task 
+- http://127.0.0.1:8000/add/     - It will show the page for entering the details of the task
+- http://127.0.0.1:8000/api/tasks/      - It will display the list of all tasks created
 
 # API Documentation - 
 
 **Create Task** 
 
-Endpoint: /api/tasks/create/
-Method: POST
-Request (JSON): 
+- Endpoint: /api/tasks/create/
+- Method: POST
+- Request (JSON): 
+
 {
     "title": "Vegetable",
     "description": "Buy some vegetables",
@@ -46,16 +47,17 @@ Request (JSON):
     "status": "Pending"
 }
 
-Success Response - 
+- Success Response - 
+
 {
   "message": "Task created"
 }
 
 **Retrieve all tasks**
 
-Endpoint: /api/tasks/
-Method: GET
-Response:
+- Endpoint: /api/tasks/
+- Method: GET
+- Response:
 [
   {
     "id": 1,
@@ -75,7 +77,7 @@ Response:
 
 # Testing framework -
 This project uses pytest for automated testing of API endpoints.
-Command to run tests: 
+- Command to run tests: 
 
 pytest
 
